@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="public/media/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="src/styles.css">
+    <script src="src/script.js" defer></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
             <a href="tel:514182313" class="phone-cta">
                 📞 514 182 313
             </a>
-            <a href="mailto:kursy@wiktom.pl" class="phone-cta email-cta">
+            <a href="mailto:kursy@wiktom.pl?subject=Zapytanie%20o%20kurs" class="phone-cta email-cta" data-email="kursy@wiktom.pl" data-subject="Zapytanie o kurs">
                 ✉ kursy@wiktom.pl
             </a>
         </div>
@@ -105,13 +106,29 @@
             <h2>Masz pytania? Chcesz zapisać się na kurs?</h2>
             <p>Skontaktuj się z nami telefonicznie lub mailowo. Chętnie udzielimy wszelkich informacji.</p>
             <a href="tel:514182313" class="footer-phone">TEL. 514 182 313</a>
-            <a href="mailto:kursy@wiktom.pl" class="footer-email">kursy@wiktom.pl</a>
+            <a href="mailto:kursy@wiktom.pl?subject=Zapytanie%20o%20kurs" class="footer-email" data-email="kursy@wiktom.pl" data-subject="Zapytanie o kurs">kursy@wiktom.pl</a>
             
             <div class="footer-note">
                 &copy; 2026 WIKTOM. Wszystkie prawa zastrzeżone. Organizacja kursów zawodowych.
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[data-email]').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    const address = this.getAttribute('data-email');
+                    const subject = this.getAttribute('data-subject') || 'Zapytanie o kurs';
+                    const mailtoUrl = `mailto:${address}?subject=${encodeURIComponent(subject)}`;
+
+                    window.location.href = mailtoUrl;
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

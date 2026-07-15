@@ -56,19 +56,21 @@ header {
 }
 
 .btn-contact-top {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
-    padding: 10px 22px;
+    padding: 12px 24px;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s ease;
     font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(124, 179, 66, 0.35);
 }
 
 .btn-contact-top:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
+    background-color: #6b9d2f;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(124, 179, 66, 0.5);
 }
 
 /* Hero Section */
@@ -113,8 +115,19 @@ header {
     box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
     transition: all 0.3s ease;
 }
+a[href^="mailto:"],
+a[href^="tel:"],
+a.phone-cta,
+.email-cta,
+.footer-phone,
+.footer-email {
+    color: inherit;
+    text-decoration: none;
+}
 
-.phone-cta:visited,
+a[href^="mailto:"]:visited,
+a[href^="tel:"]:visited,
+a.phone-cta:visited,
 .email-cta:visited,
 .footer-phone:visited,
 .footer-email:visited {
@@ -129,15 +142,20 @@ header {
 .email-cta {
     margin-top: 15px;
     font-size: 1.1rem;
-    padding: 12px 30px;
-    background-color: white;
-    color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    padding: 15px 40px;
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(124, 179, 66, 0.4);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .email-cta:hover {
-    background-color: #f7fafc;
-    color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(124, 179, 66, 0.6);
+    color: white;
 }
 
 /* Sekcja Kursów */
@@ -258,8 +276,10 @@ footer {
     margin: 8px 0 4px 0;
 }
 
-.footer-phone:hover {
+.footer-phone:hover,
+.footer-email:hover {
     color: white;
+    transform: translateY(-2px) scale(1.03);
 }
 
 .footer-email {
@@ -267,10 +287,6 @@ footer {
     font-weight: 600;
     color: white;
     margin-bottom: 14px;
-}
-
-.footer-email:hover {
-    color: var(--accent-color);
 }
 
 .footer-note {
