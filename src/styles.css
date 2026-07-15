@@ -119,6 +119,20 @@ header {
     box-shadow: 0 6px 20px rgba(124, 179, 66, 0.6);
 }
 
+.email-cta {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    background-color: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.email-cta:hover {
+    background-color: #f7fafc;
+    color: var(--primary-color);
+}
+
 /* Sekcja Kursów */
 .courses-section {
     padding: 80px 0;
@@ -223,6 +237,20 @@ footer {
 
 .footer-phone:hover {
     color: white;
+}
+
+.footer-email {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.footer-email:hover {
+    color: var(--accent-color);
 }
 
 .footer-note {
